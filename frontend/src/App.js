@@ -9,11 +9,11 @@ import AddStudent from './components/AddStudent';
 function App() {
   return (
     <div>
-      {/* Adding routers  */}
+      {/* Adding routers */}
     <Router>
       <Header />
       <Routes>
-        <Route path="/add" element={<AddStudent />} /> 
+        <Route path="/add" element={<AddStudent />} /> {/*Add student page*/}
       </Routes>
     </Router>
   </div>
