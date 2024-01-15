@@ -13,7 +13,7 @@ function Header(){
             <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
         </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Create Student</a>
+        <a className="nav-link" href="/add">Create Student</a>
       </li>
      
     </ul>

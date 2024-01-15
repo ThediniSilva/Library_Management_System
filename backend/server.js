@@ -1,11 +1,23 @@
 import express from "express";
+import cors from "cors"; 
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import { StudentModel } from "./models/student.js"; 
 import studentRouter from './routes/studentRouter.js'
 
 const app = express();
+
+//Middleware for parsing request body
 app.use(express.json());
+
+//Middleware for handling CORS policy
+app.use(
+    cors({
+        origin:'http://localhost:3000',
+        methods:['GET','POST','PUT','DELETE'],
+        allowedHeaders:['Content-Type'],
+    })
+);
 
 app.get('/', (request, response) => {
     console.log(request);
