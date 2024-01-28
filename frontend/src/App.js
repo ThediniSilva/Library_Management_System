@@ -7,6 +7,11 @@ import AddStudent from './components/AddStudent';
 import AllStudents from "./components/AllStudents";
 import UpdateStudent from "./components/UpdateStudent";
 import DeleteStudent from "./components/DeleteStudent";
+import Login from "./components/login";
+import CreteBooks from "./components/CreateBooks";
+import AllBooks from "./components/AllBooks";
+import UpdateBooks from "./components/UpdateBooks";
+import DeleteBooks from "./components/DeleteBooks";
 
 
 function App() {
@@ -22,6 +27,13 @@ function App() {
         <Route path="/add" element={<AddStudent />} /> 
         <Route path="/update/:id" element={<UpdateStudent />} /> 
         <Route path="/delete/:id" element={<DeleteStudent />} /> 
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/CreteBooks" element={<CreteBooks />} /> 
+        <Route path="/AllBooks" element={<AllBooks />} /> 
+        <Route path="/UpdateBooks/:id" element={<UpdateBooks />} />
+        <Route path="/DeleteBooks/:id" element={<DeleteBooks />} />
+        
+
       </Routes>
       </SnackbarProvider>
       

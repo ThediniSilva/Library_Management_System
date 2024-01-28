@@ -4,6 +4,7 @@ import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import { StudentModel } from "./models/student.js"; 
 import studentRouter from './routes/studentRouter.js'
+import booksRoute from './routes/booksRoute.js';
 
 const app = express();
 
@@ -25,6 +26,8 @@ app.get('/', (request, response) => {
 });
 
 app.use('/student', studentRouter);
+app.use('/books', booksRoute); //Conect bookRoute to server.js
+
 
 mongoose
     .connect(mongoDBURL)
