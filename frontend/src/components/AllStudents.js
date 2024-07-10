@@ -21,6 +21,7 @@ export default function AllStudents() {
           alert(err.message);
         });
     }
+    
     getStudent();
   }, []);
 

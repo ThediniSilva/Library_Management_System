@@ -12,6 +12,8 @@ import CreteBooks from "./components/CreateBooks";
 import AllBooks from "./components/AllBooks";
 import UpdateBooks from "./components/UpdateBooks";
 import DeleteBooks from "./components/DeleteBooks";
+import Studentlogin from "./components/studentLogin";
+import LoginPage from "./components/loginPage";
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path="/AllBooks" element={<AllBooks />} /> 
         <Route path="/UpdateBooks/:id" element={<UpdateBooks />} />
         <Route path="/DeleteBooks/:id" element={<DeleteBooks />} />
+        <Route path="/Studentlogin" element={<Studentlogin />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
         
 
       </Routes>

@@ -4,14 +4,16 @@ import axios from "axios";
 export default function AddBook() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const [publishYear, setPublishYear] = useState("");
+  const [price, setPrice] = useState("");
+  const [quantity, setquantity] = useState("");
 
   function sendData(e) {
     e.preventDefault();
     const newBook = {
       title,
       author,
-      publishYear
+      price,
+      quantity
     };
 
     axios.post("http://localhost:5555/books", newBook)
@@ -20,7 +22,8 @@ export default function AddBook() {
         // Clear input fields after successful submission
         setTitle("");
         setAuthor("");
-        setPublishYear("");
+        setPrice("");
+        setquantity("")
       })
       .catch((err) => {
         alert(err);
@@ -60,15 +63,28 @@ export default function AddBook() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="publishYear">Publish Year</label>
+          <label htmlFor="Price">Price</label>
           <input
             type="text"
             className="form-control"
-            id="publishYear"
-            placeholder="Enter Publish Year"
-            value={publishYear}
+            id="price"
+            placeholder="Enter price"
+            value={price}
             onChange={(e) => {
-              setPublishYear(e.target.value);
+              setPrice(e.target.value);
+            }}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="quantity">quantity</label>
+          <input
+            type="text"
+            className="form-control"
+            id="quantity"
+            placeholder="Enter quantity"
+            value={quantity}
+            onChange={(e) => {
+              setquantity(e.target.value);
             }}
           />
         </div>

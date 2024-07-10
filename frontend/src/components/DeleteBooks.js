@@ -38,7 +38,8 @@ export default function DeleteBook() {
       <div>
         <p>Book Title: {book.title}</p>
         <p>Book Author: {book.author}</p>
-        <p>Publish Year: {book.publishYear}</p>
+        <p>price: {book.price}</p>
+        <p>quantity: {book.quantity}</p>
       </div>
       <button onClick={deleteBook} className="btn btn-danger">
         Delete

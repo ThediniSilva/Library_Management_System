@@ -8,7 +8,8 @@ export default function UpdateBook() {
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
-    publishYear: "",
+    price: "",
+    quantity:""
   });
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +21,8 @@ export default function UpdateBook() {
         setBookData({
           title: book.title || "",
           author: book.author || "",
-          publishYear: book.publishYear || "",
+          price: book.price || "",
+          quantity: book.quantity || "",
         });
         setIsLoading(false); // Set loading to false after fetching data
       })
@@ -35,7 +37,8 @@ export default function UpdateBook() {
     const updatedBook = {
       title: bookData.title,
       author: bookData.author,
-      publishYear: bookData.publishYear,
+      price: bookData.price,
+      quantity: bookData.quantity,
     };
 
     // Update the book details based on the ID
@@ -89,13 +92,25 @@ export default function UpdateBook() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="publishYear">Publish Year</label>
+            <label htmlFor="price">price</label>
             <input
               type="text"
               className="form-control"
-              id="publishYear"
-              name="publishYear"
-              value={bookData.publishYear}
+              id="price"
+              name="price"
+              value={bookData.price}
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="quantity">quantity</label>
+            <input
+              type="text"
+              className="form-control"
+              id="quantity"
+              name="quantity"
+              value={bookData.quantity}
               onChange={handleInputChange}
             />
           </div>
