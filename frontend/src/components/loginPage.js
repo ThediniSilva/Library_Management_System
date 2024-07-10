@@ -8,21 +8,22 @@ function loginPage() {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <img src="../Image/3.png" className="card-img-top" alt="Image" />
+            <img src="../Image/5.jpg" className="card-img-top" alt="Image" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <Link to="/login" className="btn btn-primary">Go somewhere</Link>
+              <h5 className="card-title">Admin Login</h5>
+              <p className="card-text">Librarian can login to the site using this login button.</p>
+              <Link to="/login" className="btn btn-primary">Log-in</Link>
             </div>
           </div>
         </div>
         <div className="col-md-6">
           <div className="card">
-            <img src="../Image/2.png" className="card-img-top" alt="Image" />
+            <img src="../Image/7.jpg" className="card-img-top" alt="Image" />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <Link to="/Studentlogin" className="btn btn-primary">Go somewhere</Link>
+              <h5 className="card-title">Student Login</h5>
+              <p className="card-text">Students can login to the site using this login butto
+              </p><br/>
+              <Link to="/Studentlogin" className="btn btn-primary">Log-in</Link>
             </div>
           </div>
         </div>

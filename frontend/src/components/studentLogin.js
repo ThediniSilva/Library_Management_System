@@ -29,7 +29,7 @@ import { Link } from "react-router-dom";
 
   return (
     <div className="container">
-      <h2>Login Page</h2>
+      <h2>Student Login Page</h2>
      
       <form >
   <div class="mb-3">

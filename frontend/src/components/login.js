@@ -29,7 +29,7 @@ export default function Login() {
 
   return (
     <div className="container">
-      <h2>Login Page</h2>
+      <h2>Admin Login Page</h2>
      
       <form onSubmit={handleSubmit}>
   <div class="mb-3">
