@@ -24,7 +24,7 @@ export default function DeleteBook() {
       .delete(`http://localhost:5555/books/${id}`)
       .then(() => {
         alert("Book Deleted");
-        navigate("/AllBooks"); // Redirect to the book list or any other page after deletion
+        navigate("/AdminAllBooks"); // Redirect to the book list or any other page after deletion
       })
       .catch((error) => {
         alert("Error deleting book");

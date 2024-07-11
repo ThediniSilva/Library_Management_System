@@ -6,8 +6,7 @@ import SearchFeature from "../Sections/SearchFeature";
 export default function AdminAllBooks() {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [totalAmount, setTotalAmount] = useState(0);
+
 
   useEffect(() => {
     function getBooks() {
@@ -30,10 +29,10 @@ export default function AdminAllBooks() {
     getBooks();
   }, []);
 
- 
-
-  
-
+  const linkStyle = {
+    textDecoration: "none",
+    color: "white",
+  };
 
   return (
     <div className="container mt-4">
@@ -56,13 +55,12 @@ export default function AdminAllBooks() {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.price}</td>
-              <td> {book.quantity}</td>
+              <td>{book.quantity}</td>
               <td>
-                
-                <Link to={`/UpdateBooks/${book._id}`} className="mr-2">
+                <Link to={`/UpdateBooks/${book._id}`} style={linkStyle} className="btn btn-primary mr-2">
                   Update
                 </Link>
-                <Link to={`/DeleteBooks/${book._id}`} className="mr-2">
+                <Link to={`/DeleteBooks/${book._id}`} style={linkStyle} className="btn btn-danger mr-2">
                   Delete
                 </Link>
               </td>
@@ -70,7 +68,10 @@ export default function AdminAllBooks() {
           ))}
         </tbody>
       </table>
-
+      <Link to="/CreteBooks" style={linkStyle} className="btn btn-success">
+        Add new book
+      </Link>
+     
     </div>
   );
 }

@@ -25,6 +25,15 @@ export default function AllStudents() {
     getStudent();
   }, []);
 
+  const linkStyle = {
+    textDecoration: "none",
+    color: "white",
+  };
+  const customBtnStyle = {
+    marginRight: "10px", // Adjust the margin as needed
+  };
+
+
   return (
     <div className="container mt-4">
       <h1 className="mb-4">All Students</h1>
@@ -45,13 +54,25 @@ export default function AllStudents() {
               <td>{student.age}</td>
               <td>{student.gender}</td>
               <td>
-                <Link to={`/add`} className="mr-2">
+              <Link
+                  to={`/add`}
+                  style={{ ...linkStyle, ...customBtnStyle }}
+                  className="btn btn-success"
+                >
                   Add
                 </Link>
-                <Link to={`/update/${student._id}`} className="mr-2">
+                <Link
+                  to={`/update/${student._id}`}
+                  style={{ ...linkStyle, ...customBtnStyle }}
+                  className="btn btn-primary"
+                >
                   Update
                 </Link>
-                <Link to={`/delete/${student._id}`}>
+                <Link
+                  to={`/delete/${student._id}`}
+                  style={linkStyle}
+                  className="btn btn-danger"
+                >
                   Delete
                 </Link>
               </td>
