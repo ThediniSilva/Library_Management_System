@@ -14,6 +14,8 @@ import UpdateBooks from "./components/UpdateBooks";
 import DeleteBooks from "./components/DeleteBooks";
 import Studentlogin from "./components/studentLogin";
 import LoginPage from "./components/loginPage";
+import AdminAllBooks from "./components/AdminBooklist";
+import Admindashboard from "./components/AdminDashboard";
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
         <Route path="/DeleteBooks/:id" element={<DeleteBooks />} />
         <Route path="/Studentlogin" element={<Studentlogin />} />
         <Route path="/LoginPage" element={<LoginPage />} />
+        <Route path="/AdminAllBooks" element={<AdminAllBooks />} />
+        <Route path="/Admindashboard" element={<Admindashboard />} />
         
 
       </Routes>

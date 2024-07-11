@@ -53,7 +53,7 @@ export default function Login() {
       {loggedIn && (
         <div>
           <p>Logged in successfully!</p>
-          <Link to="/add">Go to AddStudent</Link>
+          <Link to="/Admindashboard">Go to AddStudent</Link>
         </div>
       )}
     </div>
