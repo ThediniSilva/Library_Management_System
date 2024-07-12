@@ -54,13 +54,7 @@ export default function AllStudents() {
               <td>{student.age}</td>
               <td>{student.gender}</td>
               <td>
-              <Link
-                  to={`/add`}
-                  style={{ ...linkStyle, ...customBtnStyle }}
-                  className="btn btn-success"
-                >
-                  Add
-                </Link>
+             
                 <Link
                   to={`/update/${student._id}`}
                   style={{ ...linkStyle, ...customBtnStyle }}
@@ -80,6 +74,13 @@ export default function AllStudents() {
           ))}
         </tbody>
       </table>
+      <Link
+                  to={`/add`}
+                  style={{ ...linkStyle, ...customBtnStyle }}
+                  className="btn btn-success"
+                >
+                  Add New Student
+                </Link>
     </div>
   );
 }

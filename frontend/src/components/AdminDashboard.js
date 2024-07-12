@@ -21,7 +21,7 @@ export default function Admindashboard() {
             <div className="card-body">
               <h5 className="card-title">Student List</h5>
               <p className="card-text">Add new Student and view Student list here..</p>
-              <a href="/" className="btn btn-primary">Go To Student List</a>
+              <a href="/AllStudents" className="btn btn-primary">Go To Student List</a>
             </div>
           </div>
         </div>

@@ -1,0 +1,12 @@
+.slider-container {
+  width: 75%; /* Adjust width as needed */
+  height: 75vh; /* Set height to 75% of the viewport height */
+  margin: 0 auto; /* Center the slider horizontally */
+}
+
+.heading {
+  text-align: center; /* Center align the heading */
+  font-size: 3rem; /* Increase the font size as needed */
+  margin-top: 20px; /* Example margin top for spacing */
+  /* Additional styles as needed */
+}
