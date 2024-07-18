@@ -3,20 +3,21 @@ import cors from "cors";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import { StudentModel } from "./models/student.js"; 
-import studentRouter from './routes/studentRouter.js'
+import studentRouter from './routes/studentRouter.js';
 import booksRoute from './routes/booksRoute.js';
+import ebookRoute from './routes/ebookRoute.js';
 
 const app = express();
 
-//Middleware for parsing request body
+// Middleware for parsing request body
 app.use(express.json());
 
-//Middleware for handling CORS policy
+// Middleware for handling CORS policy
 app.use(
     cors({
-        origin:'http://localhost:3000',
-        methods:['GET','POST','PUT','DELETE'],
-        allowedHeaders:['Content-Type'],
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
     })
 );
 
@@ -26,11 +27,11 @@ app.get('/', (request, response) => {
 });
 
 app.use('/student', studentRouter);
-app.use('/books', booksRoute); //Conect bookRoute to server.js
-
+app.use('/books', booksRoute);
+app.use('/ebooks', ebookRoute); // Connect eBook routes to server.js
 
 mongoose
-    .connect(mongoDBURL)
+    .connect(mongoDBURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('App connected to database');
         app.listen(PORT, () => {
