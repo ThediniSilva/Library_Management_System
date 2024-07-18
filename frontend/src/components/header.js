@@ -32,6 +32,12 @@ function Header() {
           <li className="nav-item">
             <Link to="AllBooks" className="nav-link">Book List</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/AddEbook" className="nav-link">Add E-Book</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/EbookList" className="nav-link"> E-Book List</Link>
+          </li>
         </ul>
       </div>
     </nav>

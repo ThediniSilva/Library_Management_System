@@ -2,7 +2,6 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import { eBook } from '../models/ebook.js';
-
 const router = express.Router();
 
 // Configure multer for file uploads
@@ -15,7 +14,19 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage: storage });
+const fileFilter = (req, file, cb) => {
+  // Accept only PDF files
+  if (file.mimetype === 'application/pdf') {
+    cb(null, true);
+  } else {
+    cb(new Error('Only PDF files are allowed!'), false);
+  }
+};
+
+const upload = multer({ 
+  storage: storage, 
+  fileFilter: fileFilter 
+});
 
 // Route to upload an eBook (Create)
 router.post('/upload', upload.single('pdf'), async (req, res) => {
@@ -28,6 +39,7 @@ router.post('/upload', upload.single('pdf'), async (req, res) => {
 
     res.status(201).json({ message: 'eBook uploaded successfully', eBook: newEBook });
   } catch (error) {
+    console.error('Error uploading eBook:', error.message);
     res.status(500).json({ error: 'Failed to upload eBook' });
   }
 });
@@ -35,11 +47,11 @@ router.post('/upload', upload.single('pdf'), async (req, res) => {
 // Route to get all eBooks
 router.get('/', async (req, res) => {
   try {
-      const eBooks = await eBook.find();
-      res.status(200).json(eBooks);
+    const eBooks = await eBook.find();
+    res.status(200).json(eBooks);
   } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Failed to retrieve all eBooks' });
+    console.error('Error fetching eBooks:', error);
+    res.status(500).json({ error: 'Failed to retrieve all eBooks' });
   }
 });
 
@@ -54,8 +66,8 @@ router.get('/:id', async (req, res) => {
 
     res.status(200).json(foundEBook);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Failed to retrieve e-Book..' });
+    console.error('Error fetching eBook:', error);
+    res.status(500).json({ error: 'Failed to retrieve eBook' });
   }
 });
 
@@ -69,7 +81,11 @@ router.put('/:id', upload.single('pdf'), async (req, res) => {
       pdfPath = req.file.path;
     }
 
-    const updatedData = { name, author, pdfPath };
+    const updatedData = { name, author };
+    if (pdfPath) {
+      updatedData.pdfPath = pdfPath;
+    }
+
     const updatedEBook = await eBook.findByIdAndUpdate(req.params.id, updatedData, { new: true });
 
     if (!updatedEBook) {
@@ -78,6 +94,7 @@ router.put('/:id', upload.single('pdf'), async (req, res) => {
 
     res.status(200).json({ message: 'eBook updated successfully', eBook: updatedEBook });
   } catch (error) {
+    console.error('Error updating eBook:', error);
     res.status(500).json({ error: 'Failed to update eBook' });
   }
 });
@@ -93,6 +110,7 @@ router.delete('/:id', async (req, res) => {
 
     res.status(200).json({ message: 'eBook deleted successfully' });
   } catch (error) {
+    console.error('Error deleting eBook:', error);
     res.status(500).json({ error: 'Failed to delete eBook' });
   }
 });
@@ -100,14 +118,15 @@ router.delete('/:id', async (req, res) => {
 // Route to download an eBook
 router.get('/download/:id', async (req, res) => {
   try {
-    const eBook = await eBook.findById(req.params.id);
+    const foundEBook = await eBook.findById(req.params.id);
 
-    if (!eBook) {
+    if (!foundEBook) {
       return res.status(404).json({ error: 'eBook not found' });
     }
 
-    res.download(eBook.pdfPath);
+    res.download(foundEBook.pdfPath);
   } catch (error) {
+    console.error('Error downloading eBook:', error);
     res.status(500).json({ error: 'Failed to download eBook' });
   }
 });

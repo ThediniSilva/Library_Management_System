@@ -17,6 +17,8 @@ import LoginPage from "./components/loginPage";
 import AdminAllBooks from "./components/AdminBooklist";
 import Admindashboard from "./components/AdminDashboard";
 import Home from "./components/Home";
+import AddEbook from "./components/AddEbook";
+import EbookList from "./components/EbookList";
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
         <Route path="/AdminAllBooks" element={<AdminAllBooks />} />
         <Route path="/Admindashboard" element={<Admindashboard />} />
         <Route path="/" element={<Home />} />
+        <Route path="/AddEbook" element={<AddEbook />} />
+        <Route path="/EbookList" element={<EbookList />} />
         
 
       </Routes>
