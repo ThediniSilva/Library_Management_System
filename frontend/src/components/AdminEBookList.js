@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
-const EbookList = () => {
+const AdminEbookList = () => {
   const [eBooks, setEBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -78,8 +79,19 @@ const EbookList = () => {
           ))}
         </tbody>
       </table>
+      <Link to="/AddEbook"  className="btn btn-success">
+Add new E-book
+</Link>
+
     </div>
   );
 };
 
-export default EbookList;
+
+
+
+export default AdminEbookList;
+
+
+
+

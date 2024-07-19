@@ -21,7 +21,7 @@ function loginPage() {
             <img src="../Image/7.jpg" className="card-img-top" alt="Image" />
             <div className="card-body">
               <h5 className="card-title">Student Login</h5>
-              <p className="card-text">Students can login to the site using this login butto
+              <p className="card-text">Students can login to the site using this login button
               </p><br/>
               <Link to="/Studentlogin" className="btn btn-primary">Log-in</Link>
             </div>

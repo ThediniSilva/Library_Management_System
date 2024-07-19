@@ -41,7 +41,7 @@ const SliderComponent = () => {
           </div>
         </Slider>
       </div>
-      <h1 className="heading">Welcome to our E-Library..... </h1>
+      <h1 className="heading">Welcome To Our Digital Library..... </h1>
     </div>
   );
 };

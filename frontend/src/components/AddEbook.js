@@ -32,22 +32,24 @@ const AddEbook = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Add New eBook</h2>
       <form onSubmit={handleFormSubmit}>
-        <div>
+   
+        <div className="form-group">
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+          <input type="text"  className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="author">Author:</label>
-          <input type="text" id="author" value={author} onChange={(e) => setAuthor(e.target.value)} required />
+          <input type="text" className="form-control" id="author" value={author} onChange={(e) => setAuthor(e.target.value)} required />
         </div>
-        <div>
-          <label htmlFor="pdfFile">Upload PDF:</label>
-          <input type="file" id="pdfFile" onChange={(e) => setPdfFile(e.target.files[0])} accept=".pdf" required />
+        <div class="mb-3"> 
+          <label for="formFile" class="form-label">Upload PDF:</label>
+          <input class="form-control" type="file" id="formFile" onChange={(e) => setPdfFile(e.target.files[0])} accept=".pdf" required />
         </div>
-        <button type="submit">Upload eBook</button>
+        <button type="submit" className
+        ="btn btn-primary">Upload eBook</button>
       </form>
     </div>
   );

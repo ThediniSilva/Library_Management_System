@@ -28,6 +28,7 @@ export default function AddStudent(){
 
     return(
     <div className="container">
+      <h2>Add New Student</h2>
         <form onSubmit={sendData}>
 
         <div className

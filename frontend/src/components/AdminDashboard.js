@@ -11,7 +11,8 @@ export default function Admindashboard() {
             <div className="card-body">
               <h5 className="card-title">Book List</h5>
               <p className="card-text">Add new books and view book list here.</p>
-              <a href="/AdminAllBooks" className="btn btn-primary">Go To Book List</a>
+              <a href="/AdminAllBooks" className="btn btn-primary" style={{ marginRight: '10px' }}>Go To Book List</a>
+              <a href="/AdminEbookList" className="btn btn-primary">Go To E-Book List</a>
             </div>
           </div>
         </div>
