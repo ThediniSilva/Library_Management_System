@@ -20,6 +20,8 @@ import Home from "./components/Home";
 import AddEbook from "./components/AddEbook";
 import EbookList from "./components/EbookList";
 import AdminEbookList from "./components/AdminEBookList";
+import UpdateEBook from "./components/UpdateEBook ";
+import DeleteEBook from "./components/DeleteEBook";
 
 
 function App() {
@@ -48,6 +50,8 @@ function App() {
         <Route path="/AddEbook" element={<AddEbook />} />
         <Route path="/EbookList" element={<EbookList />} />
         <Route path="/AdminEbookList" element={<AdminEbookList />} />
+        <Route path="/UpdateEBook/:id" element={<UpdateEBook />} />
+        <Route path="/DeleteEBook/:id" element={<DeleteEBook />} />
         
 
       </Routes>

@@ -47,6 +47,11 @@ const AdminEbookList = () => {
     eBook.author.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const linkStyle = {
+    textDecoration: "none",
+    color: "white",
+  };
+
   return (
     <div className="container mt-4">
       <h1 className="mb-4">Book List</h1>
@@ -65,6 +70,7 @@ const AdminEbookList = () => {
             <th>Title</th>
             <th>Author</th>
             <th>PDF</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -74,6 +80,14 @@ const AdminEbookList = () => {
               <td>{eBook.author}</td>
               <td>
                 <button className="btn btn-outline-success" onClick={() => handleDownload(eBook._id)}>Download PDF</button>
+              </td>
+              <td>
+              <Link to={`/UpdateEBook/${eBook._id}`} style={linkStyle} className="btn btn-primary mr-2">
+                  Update
+                </Link>
+                <Link to={`/DeleteEBook/${eBook._id}`} style={linkStyle} className="btn btn-danger mr-2">
+                  Delete
+                </Link>
               </td>
             </tr>
           ))}
